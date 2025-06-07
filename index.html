@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meu Site Simples</title>
+    <link href="../css/teste.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Meu Site para Curso de Git</h1>
+      <p>Este é um exemplo super simples para demonstrar Git!</p>
+
+      <button onclick="cumprimentar()">Dizer Olá</button>
+      <button onclick="mostrarHora()">Ver Horário</button>
+
+      <div id="mensagem"></div>
+    </div>
+
+    <script src="../js/teste.js"></script>
+  </body>
+</html>
+
+----
+css
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 50px;
+}
+
+.container {
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#mensagem {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.sucesso {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.info {
+  background-color: #d1ecf1;
+  color: #0c5460;
+  border: 1px solid #bee5eb;
+}
+
+----
+js
+
+
+function cumprimentar() {
+  const mensagem = document.getElementById("mensagem");
+  mensagem.innerHTML = "Olá! Bem-vindo ao curso de Git! 👋";
+  mensagem.className = "sucesso";
+}
+
+function mostrarHora() {
+  const agora = new Date();
+  const hora = agora.toLocaleTimeString("pt-BR");
+  const mensagem = document.getElementById("mensagem");
+  mensagem.innerHTML = `Horário atual: ${hora} ⏰`;
+  mensagem.className = "info";
+}
+
+// Mensagem de boas-vindas quando a página carrega
+window.onload = function () {
+  console.log("Página carregada! Pronto para aprender Git!");
+};
